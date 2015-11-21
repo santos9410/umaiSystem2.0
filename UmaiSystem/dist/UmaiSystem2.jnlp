@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="UmaiSystem2.jnlp">
+  <information>
+    <title>UmaiSystem2</title>
+    <vendor>lalo</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="UmaiSystem2.jar" size="917839" download="eager" />
+    <jar href="lib\DynamicJasper-5.0.3-javadoc.jar" size="1338065" download="eager" />
+    <jar href="lib\DynamicJasper-5.0.3-sources.jar" size="317451" download="eager" />
+    <jar href="lib\DynamicJasper-5.0.3-test-sources.jar" size="480320" download="eager" />
+    <jar href="lib\DynamicJasper-5.0.3-tests.jar" size="667939" download="eager" />
+    <jar href="lib\DynamicJasper-5.0.3.jar" size="377735" download="eager" />
+    <jar href="lib\commons-beanutils-1.9.0.jar" size="230951" download="eager" />
+    <jar href="lib\commons-collections-3.2.1.jar" size="575389" download="eager" />
+    <jar href="lib\commons-digester-2.1.jar" size="196768" download="eager" />
+    <jar href="lib\commons-logging-1.1.1.jar" size="60841" download="eager" />
+    <jar href="lib\controlsfx-8.40.9.jar" size="1016589" download="eager" />
+    <jar href="lib\groovy-all-2.4.3.jar" size="6969675" download="eager" />
+    <jar href="lib\itext-2.1.7.js3.jar" size="1131171" download="eager" />
+    <jar href="lib\jasperreports-6.1.1.jar" size="5380917" download="eager" />
+    <jar href="lib\jasperreports-fonts-6.1.1.jar" size="2478097" download="eager" />
+    <jar href="lib\jasperreports-javaflow-6.1.1.jar" size="5425635" download="eager" />
+    <jar href="lib\jcommon-1.0.23.jar" size="330246" download="eager" />
+    <jar href="lib\jfreechart-1.0.19.jar" size="1565065" download="eager" />
+    <jar href="lib\mysql-connector-java-5.0.8-bin.jar" size="540852" download="eager" />
+    <jar href="lib\openjfx-dialogs-1.0.3.jar" size="149178" download="eager" />
+    <jar href="lib\xml-apis.jar" size="220536" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="UmaiSystem2" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="umaisystem2.UmaiSystem2"  name="UmaiSystem2" />
+  <update check="always"/>
+</jnlp>

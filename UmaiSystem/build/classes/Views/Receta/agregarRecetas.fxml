@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import org.controlsfx.control.textfield.*?>
+<?import np.com.ngopal.control.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Receta.AgregarRecetasController">
+   <children>
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="768.0" prefWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TextField fx:id="txtNombreReceta" layoutX="55.0" layoutY="112.0" prefHeight="28.0" prefWidth="928.0">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtTamanoReceta" layoutX="289.0" layoutY="178.0" onKeyReleased="#tamPorcionRegex" prefHeight="26.0" prefWidth="125.0">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+               <tooltip>
+                  <Tooltip text="Tamaño de la porcion en gramos." />
+               </tooltip>
+            </TextField>
+            <TextField fx:id="txtPorcionReceta" layoutX="811.0" layoutY="178.0" onInputMethodTextChanged="#esNumero" prefHeight="28.0" prefWidth="151.0">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtTiempoReceta" layoutX="647.0" layoutY="178.0" prefHeight="26.0" prefWidth="151.0">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </TextField>
+            <Button layoutX="773.0" layoutY="726.0" mnemonicParsing="false" mouseTransparent="true" text="Cancelar">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnAceptarReceta" layoutX="867.0" layoutY="727.0" mnemonicParsing="false" onAction="#btnAceptarRecetaClick" prefHeight="25.0" prefWidth="113.0" text="Guardar" />
+            <TableView fx:id="TVProductos" layoutX="55.0" layoutY="226.0" prefHeight="171.0" prefWidth="909.0">
+               <columns>
+                  <TableColumn fx:id="ingredienteCol" prefWidth="308.0" text="Ingrediente" />
+                  <TableColumn fx:id="PesoNCol" prefWidth="104.0" text="Cantidad" />
+                  <TableColumn fx:id="UnidadCol" prefWidth="66.0" text="Unidad" />
+                  <TableColumn fx:id="CostoUni" prefWidth="118.0" text="Costo Unitario" />
+               </columns>
+            </TableView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="67.0" layoutX="54.0" layoutY="576.0" smooth="false" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" width="471.0" />
+            <TextField fx:id="txtCantidadIngrediente" layoutX="248.0" layoutY="605.0" onInputMethodTextChanged="#soloDecimal" />
+            <Button fx:id="btnAgregarProducto" layoutX="441.0" layoutY="605.0" mnemonicParsing="false" onAction="#btnAgregaProductoClick" text="Agregar" />
+            <Label layoutX="67.0" layoutY="590.0" text="Ingrediente" />
+            <Label layoutX="248.0" layoutY="590.0" text="Cantidad" />
+            <Label layoutX="55.0" layoutY="91.0" text="Nombre:" />
+            <Label layoutX="55.0" layoutY="155.0" text="Tipo" />
+            <Label layoutX="287.0" layoutY="155.0" text="Tamaño de Porcion" />
+            <Label layoutX="433.0" layoutY="155.0" text="Dificultad" />
+            <Label layoutX="814.0" layoutY="156.0" text="Numero de porciones" />
+            <Label layoutX="648.0" layoutY="155.0" text="Tiempo de preparacion" />
+            <ComboBox fx:id="cbTipo" layoutX="51.0" layoutY="179.0" prefHeight="25.0" prefWidth="220.0" />
+            <ComboBox fx:id="cbDificultad" layoutX="431.0" layoutY="179.0" prefHeight="25.0" prefWidth="205.0" />
+            <TextArea fx:id="preparacionTxt" layoutX="55.0" layoutY="413.0" prefHeight="156.0" prefWidth="909.0" />
+            <CustomTextField fx:id="autoComTxt" layoutX="67.0" layoutY="605.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

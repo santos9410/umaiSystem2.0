@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="1024.0" style="-fx-background-color: #F7F4F4;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MenuPrincipalController">
+   <left>
+      <SplitPane prefHeight="499.0" prefWidth="204.0" BorderPane.alignment="CENTER">
+         <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="497.0" prefWidth="209.0">
+               <children>
+                  <Accordion layoutX="-7.0" prefHeight="368.0" prefWidth="216.0">
+                    <panes>
+                      <TitledPane animated="false" text="Administrar Usuarios">
+                           <content>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox alignment="CENTER" layoutX="16.0" prefHeight="178.0" prefWidth="168.0" spacing="14.0" style="-fx-background-color: #F7F4F4;">
+                                       <children>
+                                          <Button fx:id="btnAgregarUsuario1" mnemonicParsing="false" onAction="#btnAgregarUsuarioclick" style="-fx-background-color: #42C976;" text="Agregar Usuario" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial" size="14.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="btnConsultarUsuario1" mnemonicParsing="false" onAction="#btnConsultarUsuarioClick" style="-fx-background-color: #42C976;" text="Consultar Usuario" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial" size="14.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="btnModificarUsuario1" mnemonicParsing="false" onAction="#btnModificarUsuarioClick" style="-fx-background-color: #42C976;" text="Modificar Usuario" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial" size="14.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="btnEliminarUsuario1" mnemonicParsing="false" onAction="#btnEliminarUsuarioClick" style="-fx-background-color: #42C976;" text="Eliminar Usuario" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial" size="14.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                        </TitledPane>
+                      <TitledPane animated="false" text="Administrar Ventas">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                           <content>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox alignment="CENTER" layoutX="20.0" prefHeight="178.0" prefWidth="168.0">
+                                       <children>
+                                          <Button fx:id="btnPisoVisible" mnemonicParsing="false" onAction="#btnPisoVisibleClick" style="-fx-background-color: #42C976;" text="Piso Visible" textFill="WHITE" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                        <TitledPane prefHeight="200.0" prefWidth="200.0" text="Administrar Productos">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                           <content>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox alignment="CENTER" layoutX="23.0" layoutY="63.0" prefHeight="178.0" prefWidth="168.0" spacing="14.0">
+                                       <children>
+                                          <Button fx:id="btnAgregarProducto1" mnemonicParsing="false" onAction="#btnAgregarProductoClick" style="-fx-background-color: #42C976;" text="Agregar Producto" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial" size="14.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="btnConsultarProducto1" mnemonicParsing="false" onAction="#btnConsultarProductoClick" style="-fx-background-color: #42C976;" text="Consultar Producto" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial" size="14.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="btnModificarProducto1" mnemonicParsing="false" onAction="#btnModificarProductoClick" style="-fx-background-color: #42C976;" text="Modificar Producto" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial" size="14.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="btnEliminarProducto1" mnemonicParsing="false" onAction="#btnEliminarProductoClick" style="-fx-background-color: #42C976;" text="Eliminar Producto" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial" size="14.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="btnAgregarCompra" layoutX="29.0" layoutY="146.0" mnemonicParsing="false" onAction="#btnAgregarCompraClick" prefHeight="26.0" prefWidth="131.0" style="-fx-background-color: #42C976;" text="Agregar Compra" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial" size="14.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                        <TitledPane prefHeight="200.0" prefWidth="200.0" text="Administrar Proveedores">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                           <content>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox alignment="CENTER" layoutX="23.0" prefHeight="178.0" prefWidth="168.0" spacing="14.0">
+                                       <children>
+                                          <Button fx:id="btnAgregarProveedor1" mnemonicParsing="false" onAction="#btnAgregarProveedorClick" style="-fx-background-color: #42C976;" text="Agregar Proveedor" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial" size="14.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="btnConsultarProveedor1" mnemonicParsing="false" onAction="#btnConsultarProveedorClick" style="-fx-background-color: #42C976;" text="Consultar Proveedor" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial" size="14.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="btnModificarProveedor1" mnemonicParsing="false" onAction="#btnModificarProveedorClick" style="-fx-background-color: #42C976;" text="Modificar Proveedor" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial" size="14.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="btnEliminarProveedor1" mnemonicParsing="false" onAction="#btnEliminarProveedorClick" style="-fx-background-color: #42C976;" text="Eliminar Proveedores" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial" size="14.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                        <TitledPane prefHeight="200.0" prefWidth="200.0" text="Administrar Recetas">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                           <content>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox alignment="CENTER" layoutX="23.0" prefHeight="178.0" prefWidth="168.0" spacing="14.0">
+                                       <children>
+                                          <Button fx:id="btnAgregarReceta1" mnemonicParsing="false" onAction="#btnAgregarRecetaClick" style="-fx-background-color: #42C976;" text="Agregar Receta" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial" size="14.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="btnConsultarReceta1" mnemonicParsing="false" onAction="#btnConsultarRecetaClick" style="-fx-background-color: #42C976;" text="Consultar Receta" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial" size="14.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="btnModificarReceta1" mnemonicParsing="false" onAction="#btnModificarRecetaClick" style="-fx-background-color: #42C976;" text="Modificar Receta" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial" size="14.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="btnEliminarReceta1" mnemonicParsing="false" onAction="#btnEliminarRecetaClick" style="-fx-background-color: #42C976;" text="Eliminar Receta" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial" size="14.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                        <TitledPane layoutX="10.0" layoutY="114.0" prefHeight="200.0" prefWidth="200.0" text="Reportes">
+                           <content>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox alignment="CENTER" layoutX="23.0" prefHeight="178.0" prefWidth="168.0" spacing="14.0">
+                                       <children>
+                                          <Button fx:id="btnCrearReporte" mnemonicParsing="false" onAction="#eventCrearReporte" style="-fx-background-color: #42C976;" text="Crear Reporte" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial" size="14.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                        </TitledPane>
+                    </panes>
+                  </Accordion>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </left>
+   <top>
+      <VBox alignment="CENTER" prefHeight="69.0" prefWidth="600.0" style="-fx-background-color: #d9f9e7; -fx-border-color: #68E598;" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Umai System" textFill="#ff35a7">
+               <font>
+                  <Font name="Arial Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblNomVista" text="Nombre Vista" textFill="#a10866">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+   </top>
+   <center>
+      <AnchorPane fx:id="EscenaPrincipal" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

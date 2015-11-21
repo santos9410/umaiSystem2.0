@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c58794b9-6d02-45e1-b6a1-1b59316a7294">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString>
+		<![CDATA[SELECT
+     STR_TO_DATE(ventas.fechaVenta,'%d-%m-%Y') AS ventas_fechaVenta,
+     ventas.`descuento` AS ventas_descuento,
+    sum(ventas.`total`) AS ventas_total,
+     ventas.`Num_mesa` AS ventas_Num_mesa,
+     usuarios.`nombreUsu` AS usuarios_nombreUsu,
+     ventas.`idVenta` AS ventas_idVenta,
+     clientes.`nombreCli` AS clientes_nombreCli
+FROM
+     `usuarios` usuarios INNER JOIN `ventas` ventas ON usuarios.`idUsu` = ventas.`idUsu`
+     INNER JOIN `clientes` clientes ON ventas.`idCli` = clientes.`idCli` group by ventas.Num_mesa,usuarios_nombreUsu,ventas_fechaVenta order by ventas_fechaVenta ;]]>
+	</queryString>
+	<field name="ventas_fechaVenta" class="java.sql.Date"/>
+	<field name="ventas_descuento" class="java.lang.Integer"/>
+	<field name="ventas_total" class="java.math.BigDecimal"/>
+	<field name="ventas_Num_mesa" class="java.lang.String"/>
+	<field name="usuarios_nombreUsu" class="java.lang.String"/>
+	<field name="ventas_idVenta" class="java.lang.Integer"/>
+	<field name="clientes_nombreCli" class="java.lang.String"/>
+	<group name="ventas_fechaVenta">
+		<groupExpression><![CDATA[$F{ventas_fechaVenta}]]></groupExpression>
+		<groupHeader>
+			<band height="40">
+				<textField>
+					<reportElement style="SubTitle" x="47" y="13" width="506" height="24" forecolor="#990099" uuid="37a9a755-9f5c-4e77-8ad8-fc83b25a92f5"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ventas_fechaVenta}.toString()]]></textFieldExpression>
+				</textField>
+				<rectangle>
+					<reportElement mode="Opaque" x="0" y="13" width="36" height="24" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="979069b9-16e0-4fc4-aa73-10032f7b345d"/>
+				</rectangle>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<group name="ventas_Num_mesa">
+		<groupExpression><![CDATA[$F{ventas_Num_mesa}]]></groupExpression>
+		<groupHeader>
+			<band height="30">
+				<textField>
+					<reportElement style="SubTitle" x="0" y="4" width="460" height="20" uuid="b25ed438-6e47-4e86-ac00-aca111b063c8"/>
+					<textElement>
+						<font size="16" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ventas_Num_mesa}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="ventas_idVenta">
+		<groupExpression><![CDATA[$F{ventas_idVenta}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="60" y="15" width="263" height="33" uuid="2b261c7b-f24a-4033-b89e-e80d299ae45c"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Ventas por mesa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="111" y="46" width="200" height="22" uuid="20b4a7a8-d47c-4ed4-92c0-cd4e2a5aaab3"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Umai System]]></text>
+			</staticText>
+			<image>
+				<reportElement x="433" y="0" width="70" height="70" uuid="f1fe4b6d-5025-41d3-84f6-fe789342a65d"/>
+				<imageExpression><![CDATA["C:\\Users\\lalo\\Documents\\NetBeansProjects\\umai\\UmaiSystem\\img\\UmaiSystem.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="1665d2e0-e9b2-4e4b-96d9-ed903b1151f3"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="132" y="18" width="100" height="17" forecolor="#707070" uuid="1edf5d92-0a07-4d56-a2ab-cec7be6cddf9"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Usuario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="341" y="18" width="100" height="17" forecolor="#707070" uuid="90827ad5-2514-4c6f-b0ae-a2b3b9286eea"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="07ac9cee-2117-4990-a6de-730e1e45553e"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="132" y="0" width="100" height="15" uuid="0155e997-94b5-4013-aadd-7da0d99dffdf"/>
+				<textFieldExpression><![CDATA[$F{usuarios_nombreUsu}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="341" y="0" width="100" height="15" uuid="19f6a070-e9ba-413d-9c97-f34da1c5ab18"/>
+				<textFieldExpression><![CDATA[$F{ventas_total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="74a393c6-9864-4e23-8a1f-1bb2300f9c3a"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="73f665d4-84ce-490d-a789-1d00c5e40338"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="37c58367-4e89-4ecb-b8f9-42cd543714c1"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="c53d565c-03e3-4562-a18b-349857e16e4d"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

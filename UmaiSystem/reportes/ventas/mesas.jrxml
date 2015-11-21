@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1f7a20fb-943c-48e0-8cf7-8a865131ab9b">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<parameter name="Titulo" class="java.lang.String"/>
+<field name="ventas_idVenta" class="java.lang.String"/><field name="ventas_Num_mesa" class="java.lang.String"/><background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="71" splitType="Stretch">
+			<textField>
+				<reportElement x="11" y="19" width="220" height="32" uuid="c73268ad-35b6-46d1-9547-530e9e3c6c91"/>
+				<textElement>
+					<font fontName="Arial" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Titulo}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="433" y="0" width="70" height="70" uuid="76510011-bfc5-4c04-8aac-03468fc1cb50"/>
+				<imageExpression><![CDATA["C:\\Users\\lalo\\Documents\\NetBeansProjects\\umai\\UmaiSystem\\img\\UmaiSystem.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="27" width="555" height="1" uuid="cd8683a6-074d-4578-9e7e-2b99647f8f7f"/>
+			</line>
+<staticText>
+				<reportElement x="20" y="1" width="80" height="20" uuid="42f3d6b2-739c-4f66-9197-6832fd4f9177"/>
+				<text><![CDATA[idVenta]]></text>
+                               </staticText><staticText>
+				<reportElement x="213" y="1" width="80" height="20" uuid="42f3d6b2-739c-4f66-9197-6832fd4f9177"/>
+				<text><![CDATA[nombreUsu]]></text>
+                               </staticText>		</band>
+	</columnHeader>
+	<detail>
+		<band height="27" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="21" width="555" height="1" uuid="1a20fa04-0535-4ed5-ae3f-3b53658956e9"/>
+			</line>
+			<textField>
+                                   <reportElement x="205" y="2" width="80" height="20" uuid="a05c33b6-f41d-4b2c-8585-d1c578197d01"/>
+                                   <textFieldExpression><![CDATA[$F{ventas_idVenta}]]></textFieldExpression>
+                           </textField>			<textField>
+                                   <reportElement x="2135" y="2" width="80" height="20" uuid="a05c33b6-f41d-4b2c-8585-d1c578197d01"/>
+                                   <textFieldExpression><![CDATA[$F{ventas_Num_mesa}]]></textFieldExpression>
+                           </textField>		</band>
+	</detail>
+	<columnFooter>
+		<band height="16" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" forecolor="#666666" uuid="70d59fa6-c1d3-4c22-9c33-3ee5a820ea7c"/>
+				<textElement>
+					<font fontName="Arial" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Column header" x="513" y="0" width="42" height="20" forecolor="#666666" uuid="b4b65a9c-9cba-45f8-b18e-0a30f1871128"/>
+				<textElement>
+					<font fontName="Arial" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="1" width="197" height="20" uuid="d461d965-02f6-413e-93ba-517fd047a005"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

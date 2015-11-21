@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="768.0" prefWidth="1024.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Venta.VentaController">
+    <stylesheets>
+        <URL value="@venta.css" />
+    </stylesheets>
+   <children>
+      <TableView fx:id="notaTbl" layoutX="585.0" layoutY="112.0" prefHeight="472.0" prefWidth="420.0">
+        <columns>
+          <TableColumn fx:id="productoCell" prefWidth="170.0" text="Producto" />
+          <TableColumn fx:id="precioCell" prefWidth="71.0" text="Precio" />
+            <TableColumn fx:id="cantidadCell" prefWidth="88.0" text="Cantidad" />
+            <TableColumn fx:id="totalCell" prefWidth="90.0" text="Total" />
+        </columns>
+      </TableView>
+      <Label layoutX="26.0" layoutY="27.0" text="Mesa:">
+         <font>
+            <Font size="39.0" />
+         </font>
+      </Label>
+      <Label fx:id="Mesalbl" layoutX="149.0" layoutY="27.0">
+         <font>
+            <Font size="39.0" />
+         </font>
+      </Label>
+      <ScrollPane fx:id="panel" layoutX="26.0" layoutY="112.0" prefHeight="545.0" prefWidth="550.0">
+         <content>
+            <TilePane fx:id="tiled" />
+         </content>
+      </ScrollPane>
+      <Button fx:id="addProduct" layoutX="585.0" layoutY="59.0" mnemonicParsing="false" onAction="#addProduct" prefHeight="46.0" prefWidth="55.0" text="+" />
+      <Button fx:id="btnGuardar" layoutX="860.0" layoutY="64.0" mnemonicParsing="false" onAction="#eventbtnGuardar" prefHeight="36.0" prefWidth="114.0" text="Guardar" />
+      <Button fx:id="deleteProduct" layoutX="649.0" layoutY="60.0" mnemonicParsing="false" onAction="#deleteProduct" prefHeight="46.0" prefWidth="55.0" text="-" />
+      <Button mnemonicParsing="false" text="Button" visible="false" />
+      <CheckBox mnemonicParsing="false" text="CheckBox" visible="false" />
+      <Label layoutX="633.0" layoutY="608.0" text="Total:">
+         <font>
+            <Font size="41.0" />
+         </font>
+      </Label>
+      <Label fx:id="totalLbl" layoutX="839.0" layoutY="608.0" text="\$0.00" textAlignment="CENTER">
+         <font>
+            <Font size="43.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnCancelar" layoutX="719.0" layoutY="71.0" mnemonicParsing="false" onAction="#eventCancelar" prefHeight="25.0" prefWidth="114.0" text="Cancelar" />
+   </children>
+</AnchorPane>
